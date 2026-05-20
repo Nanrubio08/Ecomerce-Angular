@@ -1,0 +1,95 @@
+<!-- Toast de confirmación -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+  <div #toastElement class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="bi bi-check-circle me-2"></i> Perfil actualizado correctamente.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Contenido principal -->
+<div class="container perfil-container">
+  <div class="card perfil-card shadow-sm">
+    <div class="row g-0">
+
+      <!-- Columna izquierda: avatar -->
+      <div class="col-md-3 perfil-sidebar d-flex flex-column align-items-center justify-content-center">
+        <i class="bi bi-person-circle perfil-avatar"></i>
+        <p class="perfil-nombre mt-3 mb-0">{{ form.get('username')?.value }}</p>
+        <small class="perfil-correo text-muted">{{ form.get('email')?.value }}</small>
+      </div>
+
+      <!-- Columna derecha: datos -->
+      <div class="col-md-9">
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="card-title mb-0">
+              <i class="bi bi-person-lines-fill me-2"></i>Perfil del Usuario
+            </h4>
+            <button class="btn btn-outline-primary btn-sm" (click)="toggleEdit()">
+              <i class="bi" [ngClass]="editMode ? 'bi-x-circle' : 'bi-pencil-square'"></i>
+              {{ editMode ? 'Cancelar' : 'Editar perfil' }}
+            </button>
+          </div>
+
+          <!-- Modo vista -->
+          <ul class="list-group list-group-flush" *ngIf="!editMode">
+            <li class="list-group-item">
+              <strong><i class="bi bi-person me-2 text-primary"></i>Usuario:</strong>
+              {{ form.get('username')?.value }}
+            </li>
+            <li class="list-group-item">
+              <strong><i class="bi bi-envelope me-2 text-primary"></i>Correo:</strong>
+              {{ form.get('email')?.value }}
+            </li>
+            <li class="list-group-item">
+              <strong><i class="bi bi-calendar-event me-2 text-primary"></i>Fecha de registro:</strong>
+              {{ fechaRegistro | date:'mediumDate' }}
+            </li>
+          </ul>
+
+          <!-- Modo edición -->
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="editMode">
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Usuario</label>
+                <input type="text" class="form-control" formControlName="username"
+                  [ngClass]="{'is-invalid': form.get('username')?.invalid && form.get('username')?.touched}">
+                <div class="invalid-feedback">El usuario es requerido.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Correo electrónico</label>
+                <input type="email" class="form-control" formControlName="email"
+                  [ngClass]="{'is-invalid': form.get('email')?.invalid && form.get('email')?.touched}">
+                <div class="invalid-feedback">Ingresa un correo válido.</div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-semibold">
+                  Nueva contraseña <small class="text-muted fw-normal">(dejar en blanco para no cambiar)</small>
+                </label>
+                <input type="password" class="form-control" formControlName="password" placeholder="••••••••">
+              </div>
+
+              <div class="col-12 d-flex justify-content-end gap-2 mt-2">
+                <button type="button" class="btn btn-outline-secondary" (click)="toggleEdit()">
+                  <i class="bi bi-x-circle me-1"></i>Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+                  <i class="bi bi-save me-1"></i>Guardar cambios
+                </button>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

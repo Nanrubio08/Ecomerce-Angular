@@ -1,0 +1,50 @@
+.register-container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.register-title {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+form.border {
+  border-radius: 0.75rem !important;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.form-control,
+.form-select {
+  &:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.2);
+  }
+}
+
+.btn-success {
+  font-weight: 500;
+  padding: 0.6rem;
+  transition: background-color 0.2s ease;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+}
+
+a {
+  color: #28a745;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: #1e7e34;
+  }
+}
+
+.alert-danger {
+  font-size: 0.875rem;
+}

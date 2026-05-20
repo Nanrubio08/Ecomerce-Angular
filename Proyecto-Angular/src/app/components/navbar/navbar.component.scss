@@ -1,0 +1,38 @@
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 1rem;
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0d6efd; // azul Bootstrap
+    }
+
+    img {
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+  }
+
+  .navbar-nav {
+    .nav-item {
+      margin: 0 0.5rem;
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+
+    .navbar-toggler-icon {
+      filter: brightness(0.2);
+    }
+  }
+}

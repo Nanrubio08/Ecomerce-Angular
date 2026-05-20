@@ -1,0 +1,13 @@
+/* Altura mínima de la pantalla completa */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* El main crece y empuja el footer hacia abajo */
+.main-container {
+  flex: 1;
+  padding: 2rem 1rem; // separación del navbar
+  margin-top: 4rem;   // espacio extra si el navbar es fijo
+}

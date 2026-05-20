@@ -1,0 +1,106 @@
+.navbar {
+  margin-bottom: 150px;
+}
+
+.perfil-container {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.perfil-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  border: none;
+}
+
+.perfil-sidebar {
+  background-color: #f0f4ff;
+  padding: 2.5rem 1.5rem;
+  border-right: 1px solid #dee2e6;
+  min-height: 300px;
+}
+
+.perfil-avatar {
+  font-size: 6rem;
+  color: #4a6cf7;
+}
+
+.perfil-nombre {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #2d3748;
+  text-align: center;
+}
+
+.perfil-correo {
+  font-size: 0.85rem;
+  text-align: center;
+  word-break: break-all;
+}
+
+.list-group-item {
+  padding: 0.75rem 0.25rem;
+  border-left: none;
+  border-right: none;
+  font-size: 0.95rem;
+  color: #444;
+
+  strong {
+    color: #2d3748;
+  }
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.form-control:disabled,
+.form-control[disabled] {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #4a6cf7;
+  border-color: #4a6cf7;
+
+  &:hover {
+    background-color: #3a5ce5;
+    border-color: #3a5ce5;
+  }
+}
+
+.btn-outline-primary {
+  color: #4a6cf7;
+  border-color: #4a6cf7;
+
+  &:hover {
+    background-color: #4a6cf7;
+    color: #fff;
+  }
+}
+
+// Responsive
+@media (max-width: 767px) {
+  .perfil-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .card-body {
+    padding: 1.25rem;
+  }
+}

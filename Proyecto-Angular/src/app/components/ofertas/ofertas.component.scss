@@ -1,0 +1,70 @@
+body {
+        margin: 0;
+        background: linear-gradient(to bottom, #050726, #000000);
+}
+
+ footer {
+    border-top: 1px solid #333;
+    margin-top: 4rem;
+    padding-top: 2rem;
+  }
+
+ .nav-item {
+    transition: background-color 0.3s ease, transform 0.3s ease, border-radius 0.3s ease;
+    border-radius: 8px;
+  }
+  
+ .nav-item:hover {
+    background-color: #d3d3d3;
+    transform: scale(1.2);
+    border-radius: 12px;
+  }
+  
+ .nav-item img {
+    transition: transform 0.3s ease;
+  }
+  
+ .nav-item:hover img {
+    transform: scale(1.2);
+  }
+
+ .carousel-inner img {
+    width: 60%; 
+    border-radius: 15px;
+  }
+
+ #carouselPrincipal {
+    margin-top: 70px;
+  }
+
+.carousel-item h2, .carousel-item p {
+    color: white;
+  }
+  
+.carousel-item {
+    background-color: transparent;
+    padding: 20px;
+  }
+  
+.circle-img {
+    border-radius: 50%; 
+    width: 150px;
+    height: 150px; 
+    object-fit: cover;
+  }
+
+  .circle-img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+  }
+
+.btn:hover {
+  transform: scale(1.2);
+  transition: background-color 0.3s ease, transform 0.3s ease
+}
+
+.logoConsola {
+  margin-top: 50px;
+}
+
+
