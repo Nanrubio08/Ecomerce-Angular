@@ -12,17 +12,6 @@ yarn-error.log*
 .yarn-integrity
 package-lock.json
 
-# ─── Angular (Proyecto-Angular) ──────────────────────────────────────────────
-Proyecto-Angular/dist/
-Proyecto-Angular/tmp/
-Proyecto-Angular/out-tsc/
-Proyecto-Angular/.angular/cache/
-Proyecto-Angular/coverage/
-Proyecto-Angular/.sass-cache/
-Proyecto-Angular/connect.lock
-Proyecto-Angular/testem.log
-Proyecto-Angular/typings/
-
 # ─── Docker ──────────────────────────────────────────────────────────────────
 # Keep Dockerfiles and docker-compose tracked; ignore runtime artifacts.
 docker-compose.override.yml
