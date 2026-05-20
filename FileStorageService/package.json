@@ -1,0 +1,20 @@
+{
+  "name": "file-service",
+  "version": "1.0.0",
+  "description": "Dedicated service for file upload handling, decoupling storage logic.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.1",
+    "mongoose": "^8.16.1",
+    "dotenv": "^17.0.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

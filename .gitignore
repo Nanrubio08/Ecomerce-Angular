@@ -1,0 +1,61 @@
+# ─── Secrets & environment ───────────────────────────────────────────────────
+.env
+*.env.local
+*.env.*.local
+
+# ─── Node / npm ──────────────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+package-lock.json
+
+# ─── Angular (Proyecto-Angular) ──────────────────────────────────────────────
+Proyecto-Angular/dist/
+Proyecto-Angular/tmp/
+Proyecto-Angular/out-tsc/
+Proyecto-Angular/.angular/cache/
+Proyecto-Angular/coverage/
+Proyecto-Angular/.sass-cache/
+Proyecto-Angular/connect.lock
+Proyecto-Angular/testem.log
+Proyecto-Angular/typings/
+
+# ─── Docker ──────────────────────────────────────────────────────────────────
+# Keep Dockerfiles and docker-compose tracked; ignore runtime artifacts.
+docker-compose.override.yml
+
+# ─── File upload storage ─────────────────────────────────────────────────────
+uploads/
+FileStorageService/uploads/
+
+# ─── IDEs and editors ────────────────────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+
+# ─── OS files ────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ─── Test & coverage output ──────────────────────────────────────────────────
+coverage/
+.nyc_output/

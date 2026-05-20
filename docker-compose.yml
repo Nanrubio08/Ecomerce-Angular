@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./API-Gateway
+    container_name: api_gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - AUTH_SERVICE_URL=http://auth-service:3000
+      - CATALOG_SERVICE_URL=http://catalog-service:3001
+      - FILE_SERVICE_URL=http://file-service:3002
+    depends_on:
+      auth-service:
+        condition: service_started
+      catalog-service:
+        condition: service_started
+      file-service:
+        condition: service_started
+    networks:
+      - frontend-net
+      - backend-net
+    restart: unless-stopped
+
+  auth-service:
+    build: ./AuthService
+    container_name: auth_service
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGO_URI=mongodb+srv://nahnrub:${MONGO_PASSWORD}@cluster0.aytbxth.mongodb.net/Proyecto_Ecomerce?appName=Cluster0
+      - JWT_SECRET=${JWT_SECRET}
+    networks:
+      - backend-net
+    restart: unless-stopped
+
+  catalog-service:
+    build: ./CatalogService
+    container_name: catalog_service
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - MONGO_URI=mongodb+srv://nahnrub:${MONGO_PASSWORD}@cluster0.aytbxth.mongodb.net/Proyecto_Ecomerce?appName=Cluster0
+    networks:
+      - backend-net
+    restart: unless-stopped
+
+  file-service:
+    build: ./FileStorageService
+    container_name: file_service
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - MONGO_URI=mongodb+srv://nahnrub:${MONGO_PASSWORD}@cluster0.aytbxth.mongodb.net/Proyecto_Ecomerce?appName=Cluster0
+    volumes:
+      - file_uploads:/app/uploads
+    networks:
+      - backend-net
+    restart: unless-stopped
+
+  frontend:
+    build: ./Proyecto-Angular
+    container_name: angular_frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - api-gateway
+    networks:
+      - frontend-net
+    restart: unless-stopped
+
+volumes:
+  file_uploads:
+
+networks:
+  frontend-net:
+    driver: bridge
+  backend-net:
+    driver: bridge
